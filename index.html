@@ -46,25 +46,6 @@
             animation: fall linear infinite;
         }
 
-        #celebration-gif {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        #celebration-gif img {
-            max-width: 400px;
-            width: 80%;
-        }
-
         @keyframes fall {
             to {
                 transform: translateY(100vh);
@@ -91,25 +72,16 @@
     <div class="snowflake" style="left: 80%; animation-duration: 13s;">❄️</div>
     <div class="snowflake" style="left: 90%; animation-duration: 8s;">❄️</div>
 
-    <!-- Div para mostrar el GIF de celebración -->
-    <div id="celebration-gif">
-        <h1>¡Felices Vacaciones! 🎉</h1>
-        <img src="https://y.yarn.co/527d5049-15ba-4660-80d5-8a31328ded18_text.gif" alt="Celebración">
-    </div>
-
     <script>
         const vacacionesFecha = new Date('2024-12-20T00:00:00');
 
         function actualizarContador() {
-            const ahora = new Date('2024-12-20T00:00:00');
+            const ahora = new Date();
             const diferencia = vacacionesFecha - ahora;
 
             if (diferencia <= 0) {
                 document.getElementById('contador').innerText = "¡Es hora de vacacionar!";
                 document.getElementById('reloj').innerText = "00:00:00:00";
-
-                // Mostrar el GIF de celebración
-                document.getElementById('celebration-gif').style.display = 'flex';
                 return;
             }
 
